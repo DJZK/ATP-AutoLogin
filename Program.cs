@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
@@ -43,7 +44,7 @@ namespace SeleniumExample
             }
 
             // Create a new instance of the Chrome driver
-            using (IWebDriver driver = new ChromeDriver())
+            using (IWebDriver driver = new EdgeDriver())
             {
                 // Navigate to the login page
                 driver.Navigate().GoToUrl("http://openflow.alfamart.ho/#/Login");
@@ -52,7 +53,7 @@ namespace SeleniumExample
                 var loginPage = new LoginPage(driver);
 
                 // Log in using the provided username and password
-                loginPage.Login(args[0], args[0] + args[0] + "@");
+                loginPage.Login(args[0], args[0] + args[0]+"@");
 
                 Thread.Sleep(10000);
             }
